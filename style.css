@@ -1,0 +1,28 @@
+.card {
+    width: 20rem;
+    height: 26.67rem;
+    border: 1px solid #ddd;
+    border-radius: 1rem;
+    background-color: #f9f9f9;
+    margin: 1.33rem;
+    padding: 1.33rem;
+    box-sizing: border-box;
+    float: left;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .card-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: auto;
+    padding-bottom: 1rem;
+  }
+  
+  .card-links a {
+    margin-top: 1rem;
+    display: inline-block;
+  }

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+      integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
+      crossorigin="anonymous"
+    />
+    <title>Portfolio</title>
+  </head>
+  <body>
+    <h2 class="projects-cta">Explore my projects</h2>
+    <div id="cardsContainer">
+      <!-- dynamic content -->
+    </div>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <a
+          href="https://github.com/yourusername"
+          target="_blank"
+          class="github-link"
+        >
+          <i class="fab fa-github footer-icon"></i>
+        </a>
+        <a
+          href="https://linkedin.com/in/yourusername"
+          target="_blank"
+          class="linkedeIn-link"
+        >
+          <i class="fab fa-linkedin footer-icon"></i>
+        </a>
+      </div>
+    </footer>
+
+    <script>
+      //set your username in the const gitUserName = "yourusername"; to get your own repos that you have starred
+      const gitUserName = "ToJoh123";
+      //this code will replace the github link in the footer with your own github link
+      const githubLink = document.querySelector(".github-link");
+      githubLink.href = `https://github.com/${gitUserName}`;
+
+      //set your linked in profile name, you get it my going to your linked in profile and copy the part after the /in/ in the url
+      const linkedInUsername = "tom-johansson-021604198";
+      //this code will replace the linkedin link in the footer with your own linkedin link
+      const linkedInLink = document.querySelector(".linkedeIn-link");
+      linkedInLink.href = `https://www.linkedin.com/in/${linkedInUsername}`;
+
+      async function getData() {
+        try {
+          const response = await fetch(
+            //insert your gitUserName in the $ sign
+            `https://api.github.com/users/${gitUserName}/repos`
+          );
+          const data = await response.json();
+          console.log("printing data");
+          console.log(data);
+          //calls the function printObject and passes the data as a parameter
+          printObject(data);
+          renderObjects(data);
+        } catch (error) {
+          console.error(error);
+        }
+      }
+      getData();
+
+      //console log name of the myObject
+      console.log(myObj.name);
+      //console log the description of myObject
+      console.log(myObj.description);
+      //console the url of myObject
+      console.log(myObj.html_url);
+      //console log the owner of myObject
+      console.log(myObj.owner.login);
+      //console log the homepage of myObject
+      console.log(myObj.homepage);
+
+      //function that thats object as a parameter and loops through the object and console log the values
+      function printObject(obj) {
+        console.log(obj.length);
+        for (let i = 0; i < obj.length; i++) {
+          if (
+            obj[i].hasOwnProperty("owner") &&
+            obj[i].owner.hasOwnProperty("login") &&
+            obj[i].owner.login === gitUserName
+          ) {
+            console.log(obj[i].name);
+            console.log(obj[i].description);
+            console.log(obj[i].html_url);
+          }
+        }
+      }
+      function renderObjects(obj) {
+        let cards = "";
+        for (let i = 0; i < obj.length; i++) {
+          if (
+            obj[i].hasOwnProperty("owner") &&
+            obj[i].owner.hasOwnProperty("login") &&
+            obj[i].owner.login === gitUserName
+          ) {
+            cards += `
+        <div class="card">
+          <h2>${obj[i].name}</h2>
+          <p>${obj[i].description}</p>
+          <div class="card-links">
+            <a href="${obj[i].html_url}"><i class="fas fa-code-branch"></i> Repo</a>
+            <a href="${obj[i].homepage}"><i class="fas fa-globe"></i> Website</a>
+          </div>
+        </div>
+      `;
+          }
+        }
+        document.getElementById("cardsContainer").innerHTML = cards;
+      }
+    </script>
+  </body>
+</html>
