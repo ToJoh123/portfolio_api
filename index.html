@@ -14,6 +14,18 @@
     <title>Portfolio</title>
   </head>
   <body>
+    <header>
+      <div class="header-container">
+        <h1 class="logo">Your Name</h1>
+        <nav class="nav">
+          <a href="/" class="nav-link">Home</a>
+          <a href="/about" class="nav-link">About</a>
+          <a href="/projects" class="nav-link">Projects</a>
+          <a href="/contact" class="nav-link">Contact</a>
+          <a href="/curriculum" class="nav-link">Curriculum</a>
+        </nav>
+      </div>
+    </header>
     <h2 class="projects-cta">Explore my projects</h2>
     <div id="cardsContainer">
       <!-- dynamic content -->
@@ -51,6 +63,8 @@
       const linkedInLink = document.querySelector(".linkedeIn-link");
       linkedInLink.href = `https://www.linkedin.com/in/${linkedInUsername}`;
 
+      getData();
+
       async function getData() {
         try {
           const response = await fetch(
@@ -60,41 +74,15 @@
           const data = await response.json();
           console.log("printing data");
           console.log(data);
+
           //calls the function printObject and passes the data as a parameter
-          printObject(data);
           renderObjects(data);
         } catch (error) {
           console.error(error);
         }
       }
-      getData();
 
-      //console log name of the myObject
-      console.log(myObj.name);
-      //console log the description of myObject
-      console.log(myObj.description);
-      //console the url of myObject
-      console.log(myObj.html_url);
-      //console log the owner of myObject
-      console.log(myObj.owner.login);
-      //console log the homepage of myObject
-      console.log(myObj.homepage);
-
-      //function that thats object as a parameter and loops through the object and console log the values
-      function printObject(obj) {
-        console.log(obj.length);
-        for (let i = 0; i < obj.length; i++) {
-          if (
-            obj[i].hasOwnProperty("owner") &&
-            obj[i].owner.hasOwnProperty("login") &&
-            obj[i].owner.login === gitUserName
-          ) {
-            console.log(obj[i].name);
-            console.log(obj[i].description);
-            console.log(obj[i].html_url);
-          }
-        }
-      }
+      //this function is called from the getData function
       function renderObjects(obj) {
         let cards = "";
         for (let i = 0; i < obj.length; i++) {
