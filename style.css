@@ -1,4 +1,4 @@
-/* *{
+*{
   margin: 0;
   padding: 0;
   list-style: none;
@@ -59,7 +59,27 @@ font-size: 16px;
 }
 
 /* card style */
+.card_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background-color: #f9f9f9;
+}
+.card_container h2{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.33rem;
+  font-weight: 800;
+  color: #101010;
+  padding: 1rem;
+}
 .card {
+    font-family: 'Montserrat', sans-serif;
     width: 20rem;
     height: 26.67rem;
     border: 1px solid #ddd;
@@ -74,6 +94,13 @@ font-size: 16px;
     display: flex;
     flex-direction: column;
   }
+  .card h2{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.33rem;
+    font-weight: 200;
+    color: #101010;
+    margin-bottom: 1.33rem;
+  }
   
   .card-links {
     display: flex;
@@ -86,6 +113,37 @@ font-size: 16px;
   .card-links a {
     margin-top: 1rem;
     display: inline-block;
+  }
+  /* Theme 1 - Red */
+.theme-1 .card_container {
+  background-color: #ffcccc;
+  }
+  
+  .theme-1 .card {
+  border: 1px solid #ff0000;
+  background-color: #ffcccc;
+
+  }
+  
+  /* Theme 2 - Yellow */
+  .theme-2 .card_container {
+  background-color: #ffffcc;
+  }
+  
+  .theme-2 .card {
+  border: 2px solid #ffff00;
+  background-color: #ffffcc;
+  }
+  
+  /* Theme 3 - Blue */
+  .theme-3 .card_container {
+  background-color: #ccccff;
+  }
+  
+  .theme-3 .card {
+  border: 3px solid #0000ff;
+  background-color: #ccccff;
+
   }
 
   /*footer styling*/
@@ -168,4 +226,4 @@ font-size: 16px;
    margin-bottom: 30px;
   }
 }
-   */
+  
