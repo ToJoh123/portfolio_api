@@ -14,41 +14,67 @@
     <title>Portfolio</title>
   </head>
   <body>
-    <header>
-      <div class="header-container">
-        <h1 class="logo">Your Name</h1>
-        <nav class="nav">
-          <a href="/" class="nav-link">Home</a>
-          <a href="/about" class="nav-link">About</a>
-          <a href="/projects" class="nav-link">Projects</a>
-          <a href="/contact" class="nav-link">Contact</a>
-          <a href="/curriculum" class="nav-link">Curriculum</a>
-        </nav>
+    <div class="header">
+      <div class="inner_header">
+        <div class="logo_container">
+          <h1>MY<span>site</span></h1>
+        </div>
+        <ul class="navigation">
+          <a href="#"><li>Home</li></a>
+          <a href="#"><li>about</li></a>
+          <a href="#"><li>contact</li></a>
+          <a href="#"><li>Portfolio</li></a>
+        </ul>
       </div>
-    </header>
+    </div>
+
     <h2 class="projects-cta">Explore my projects</h2>
     <div id="cardsContainer">
       <!-- dynamic content -->
     </div>
 
-    <footer class="footer">
-      <div class="footer-container">
-        <a
-          href="https://github.com/yourusername"
-          target="_blank"
-          class="github-link"
-        >
-          <i class="fab fa-github footer-icon"></i>
-        </a>
-        <a
-          href="https://linkedin.com/in/yourusername"
-          target="_blank"
-          class="linkedeIn-link"
-        >
-          <i class="fab fa-linkedin footer-icon"></i>
-        </a>
+    <div class="footer">
+      <div class="inner_footer">
+        <div class="logo_container">
+          <img src="https://picsum.photos/200/300" alt="testlogo" />
+        </div>
+
+        <div class="footer_third">
+          <h1>Need help?</h1>
+          <a href="#">Contact us</a>
+          <a href="#">FAQ</a>
+        </div>
+
+        <div class="footer_third">
+          <h1>Stay connected</h1>
+          <li>
+            <a href="#" class="github-link"
+              ><i class="fab fa-github footer-icon"></i
+            ></a>
+          </li>
+          <li>
+            <a href="#" class="linkedeIn-link"
+              ><i class="fab fa-linkedin footer-icon"></i
+            ></a>
+          </li>
+          <li>
+            <a href="#"><i class="fab fa-twitter footer-icon"></i></a>
+          </li>
+          <span>
+            <p>© 2021 MYsite. All rights reserved</p>
+            <br />
+            <p>Terms of use | Privacy policy</p>
+            <br />
+            <p>
+              Created by
+              <a href="https://github.com/ToJoh123/portfolio_api.git"
+                >Tom Johansson</a
+              >
+            </p>
+          </span>
+        </div>
       </div>
-    </footer>
+    </div>
 
     <script>
       //set your username in the const gitUserName = "yourusername"; to get your own repos that you have starred
@@ -69,7 +95,7 @@
         try {
           const response = await fetch(
             //insert your gitUserName in the $ sign
-            `https://api.github.com/users/${gitUserName}/repos`
+            `https://api.github.com/users/${gitUserName}/starred`
           );
           const data = await response.json();
           console.log("printing data");
