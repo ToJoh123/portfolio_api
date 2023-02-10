@@ -24,18 +24,31 @@ function renderObjects(obj) {
     if (
       obj[i].hasOwnProperty("owner") &&
       obj[i].owner.hasOwnProperty("login") &&
-      obj[i].owner.login === gitUserName
+      obj[i].owner.login === "ToJoh123"
     ) {
+      let repoUrl = obj[i].html_url;
+      let pageUrl = "";
+      if (obj[i].has_pages) {
+        pageUrl = `https://${obj[i].owner.login}.github.io/${obj[i].name}`;
+      }
       cards += `
-  <div class="card">
-    <h2>${obj[i].name}</h2>
-    <p>${obj[i].description}</p>
-    <div class="card-links">
-      <a href="${obj[i].html_url}"><i class="fas fa-code-branch"></i> Repo</a>
-      <a href="${obj[i].homepage}"><i class="fas fa-globe"></i> Website</a>
-    </div>
-  </div>
-`;
+      <div class="card">
+        <h2><a href="${repoUrl}">${obj[i].name}</a></h2>
+        <p>${obj[i].description}</p>
+        <div class="icons">
+          <a href="${repoUrl}">
+            <i class="fas fa-code-branch"></i>
+          </a>
+          ${
+            pageUrl
+              ? `<a href="${pageUrl}">
+                <i class="fas fa-globe"></i>
+              </a>`
+              : ""
+          }
+        </div>
+      </div>
+    `;
     }
   }
   document.getElementById("cards").innerHTML = cards;
