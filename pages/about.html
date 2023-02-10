@@ -4,14 +4,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="../styles/style.css" />
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
       integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
       crossorigin="anonymous"
     />
-    <title>Portfolio</title>
+    <title>About</title>
   </head>
   <body>
     <header class="header">
@@ -20,44 +20,48 @@
           <h1>MY<span>site</span></h1>
         </div>
         <ul class="navigation">
-          <a href="index.html"><li>Home</li></a>
+          <a href="../index.html"><li>Home</li></a>
           <a href="../pages/about.html"><li>About me</li></a>
           <a href="../pages/contact.html"><li>Contact</li></a>
         </ul>
       </div>
     </header>
-    <div class="hero-container">
-      <div class="hero-image">
-        <img src="./img/hero-image_2.webp"hero-image" />
-      </div>
-      <div class="hero-text">
-        <h1>Hi, I'm Tom Johansson</h1>
-        <p>Fullstack developer</p>
-        <p class="hero-text-p">
-          I'm a fullstack developer with a passion for creating web applications
-          and websites. I'm currently studying at Nackademin.
-        </p>
-      </div>
-    </div>
 
-    <div class="card_container theme-3">
-      <h2>My projects</h2>
-      <div id="cards">
-        <!-- dynamic content -->
+    <section class="about-me-section">
+      <h2 class="section-title">About Me</h2>
+      <p>
+        Hi, I'm your name, a full-stack web developer with a passion for open
+        source. I have experience in the following programming languages:
+      </p>
+
+      <p>
+        In addition to my technical skills, I also have a strong work ethic and
+        a dedication to continuous learning. I am currently seeking internships
+        to further develop my skills and gain real-world experience.
+      </p>
+    </section>
+
+    <section class="about-curriculum-section">
+      <h2 class="section-title">Learn More About Our School</h2>
+      <p>
+        Discover what sets our school apart and what you can expect from your
+        education here:
+      </p>
+      <div class="about-curriculum-links">
+        <a href="/about" class="about-curriculum-link">About Our School</a>
+        <a href="/curriculum" class="about-curriculum-link">Our Curriculum</a>
       </div>
-    </div>
+    </section>
 
     <footer class="footer">
       <div class="inner_footer">
         <div class="logo_container">
-          <img src="Fullstack(1).png" alt="testlogo" />
+          <img src="../img/Fullstack(1).png" alt="testlogo" />
         </div>
-
         <div class="footer_third">
           <h1>Need help?</h1>
           <a href="./pages/contact.html">Contact me</a>
         </div>
-
         <div class="footer_third">
           <h1>Stay connected</h1>
           <li>
@@ -86,7 +90,6 @@
         </div>
       </div>
     </footer>
-    <script src="./js/script.js"></script>
-    <script src="./js/github.js"></script>
+    <script src="../js/script.js"></script>
   </body>
 </html>

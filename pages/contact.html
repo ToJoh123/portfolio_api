@@ -4,14 +4,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="../styles/style.css" />
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
       integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
       crossorigin="anonymous"
     />
-    <title>Portfolio</title>
+    <title>Contact me</title>
   </head>
   <body>
     <header class="header">
@@ -20,44 +20,39 @@
           <h1>MY<span>site</span></h1>
         </div>
         <ul class="navigation">
-          <a href="index.html"><li>Home</li></a>
+          <a href="../index.html"><li>Home</li></a>
           <a href="../pages/about.html"><li>About me</li></a>
           <a href="../pages/contact.html"><li>Contact</li></a>
         </ul>
       </div>
     </header>
-    <div class="hero-container">
-      <div class="hero-image">
-        <img src="./img/hero-image_2.webp"hero-image" />
-      </div>
-      <div class="hero-text">
-        <h1>Hi, I'm Tom Johansson</h1>
-        <p>Fullstack developer</p>
-        <p class="hero-text-p">
-          I'm a fullstack developer with a passion for creating web applications
-          and websites. I'm currently studying at Nackademin.
-        </p>
-      </div>
-    </div>
+    <!-- https://formspree.io/register 
+                go here to register an free acount and get your own link
+                otherwise you can use mine but it will send the message to my email
+          -->
+    <form action="https://formspree.io/f/mpzepljp" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="user_name" required /><br /><br />
 
-    <div class="card_container theme-3">
-      <h2>My projects</h2>
-      <div id="cards">
-        <!-- dynamic content -->
-      </div>
-    </div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="user_email" required /><br /><br />
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="user_message" rows="5" required></textarea
+      ><br /><br />
+
+      <input type="submit" value="Submit" />
+    </form>
 
     <footer class="footer">
       <div class="inner_footer">
         <div class="logo_container">
-          <img src="Fullstack(1).png" alt="testlogo" />
+          <img src="../img/Fullstack(1).png" alt="testlogo" />
         </div>
-
         <div class="footer_third">
           <h1>Need help?</h1>
           <a href="./pages/contact.html">Contact me</a>
         </div>
-
         <div class="footer_third">
           <h1>Stay connected</h1>
           <li>
@@ -86,7 +81,8 @@
         </div>
       </div>
     </footer>
-    <script src="./js/script.js"></script>
-    <script src="./js/github.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="../js/form.js"></script>
   </body>
 </html>
+ema

@@ -58,6 +58,33 @@ font-family: 'Montserrat', sans-serif;
 font-size: 16px;
 }
 
+/* hero style */
+.hero-container {
+position: relative;
+}
+.hero-image{
+  width: 100%;
+  
+  filter: blur(5px);
+}
+.hero-image img{
+  width: 100%;
+  height: 300px;
+
+}
+
+.hero-text {
+  /* text-shadow: -1px -1px 0 #201e1e, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff; */
+
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: black;
+}
+
 /* card style */
 .card_container {
   display: flex;
@@ -141,8 +168,8 @@ font-size: 16px;
   }
   
   .theme-3 .card {
-  border: 3px solid #0000ff;
-  background-color: #ccccff;
+  /* border: 3px solid #120d58d8;
+  background-color: #616197; */
 
   }
 
@@ -170,7 +197,7 @@ font-size: 16px;
 
 }
 .inner_footer .logo_container img{
-  width: 65px;
+  width: 65%;
   height: auto;
 }
 
@@ -213,6 +240,42 @@ font-size: 16px;
   display: block;
   width: 100%;
   padding-top: 20px;
+}
+
+/*Form styling*/
+form {
+  color: white;
+  width: 50%;
+  margin: 2rem auto;
+  padding: 20px;
+  background-color: #101010;
+}
+
+label {
+  width: 100%;
+  display: block;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 18px;
+  border: 1px solid gray;
+  box-sizing: border-box;
+}
+
+input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color:#5f5959a2; 
+  color: white;
+  border: none;
+  font-size: 18px;
+  border-color: white;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 600px){
